@@ -4,7 +4,6 @@ const iq = require("inquirer");
 const generate = require("./utils/generateMarkdown");
 const licenses = require("./utils/licenses.json");
 
-const requireLetterAndNumber = value => /\w/.test(value) && /\d/.test(value);
 
 // TODO: Create an array of questions for user input
 const questions = [
@@ -12,43 +11,31 @@ const questions = [
         type: 'input',
         message: 'What is your project called?',
         name: 'title',
-        validate: requireLetterAndNumber,
     },
     {
         type: 'input',
         message: 'Describe your project',
         name: 'Description',
-        validate: requireLetterAndNumber,
     },
     {
         type: 'input',
         message: 'How do you install you project?',
         name: 'Installation',
-        validate: requireLetterAndNumber,
     },
     {
         type: 'input',
         message: 'How do you use your project?',
         name: 'Usage',
-        validate: requireLetterAndNumber,
     },
     {
         type: 'input',
         message: 'How can you contribute to this project?',
         name: 'Contributing',
-        validate: requireLetterAndNumber,
     },
     {
         type: 'input',
-        message: 'How can you run test to verify the integrity of the project?',
+        message: 'How can you run tests to verify the integrity of the project?',
         name: 'Tests',
-        validate: requireLetterAndNumber,
-    },
-    {
-        type: 'input',
-        message: 'What should users do if they have questions?',
-        name: 'Questions',
-        validate: requireLetterAndNumber,
     },
     {
         type: 'list',
@@ -60,7 +47,6 @@ const questions = [
         type: 'input',
         message: 'What is your github username?',
         name: 'Username',
-        validate: requireLetterAndNumber,
     },
     {
         type: 'input',
@@ -82,7 +68,7 @@ async function writeToFile(fileName, data) {
 // TODO: Create a function to initialize app
 function init() {
     iq.prompt(questions).then(data=>{
-        writeToFile(data.title)
+        writeToFile(`${data.title}-README.md`,generate(data))
     })
 }
 
