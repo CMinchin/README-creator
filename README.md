@@ -1,5 +1,5 @@
 # README maker 
-  ![lisence: MIT](https://img.shields.io/github/license//TheEpicHamster/README-creator)
+  ![lisence: MIT](https://img.shields.io/github/license/TheEpicHamster/README-creator)
 
   ## Description
 
@@ -19,13 +19,13 @@
   
   [License](#License)
   
-  [Installation]#Installation
+  [Installation](#Installation)
 
-  clone the repository, install and dependencies using `npm i`
+  clone the repository, and install all node package dependencies using `npm i`
   
   ## Usage
 
-  run `npm i` in the console
+  run `node index.js` in the console in the base project directory
   
   ## Contributing
 
@@ -33,11 +33,12 @@
   
   ## Tests
 
-  at this point there are no test or plans to add them
+  There are currently no tests setup in this project to test it's functionality
   
   ## Questions
 
-  undefined
+  If you have any questions I can be reached through my email [cameron.minchin@gmail.com](cameron.minchin@gmail.com) or through [my Github](https://github.com/TheEpicHamster/). 
+  However I am unlikely to respond to an email or comment regarding this repository as this is a project I have completed and likely will not return to.
   
   ## License
 

@@ -1,6 +1,6 @@
 // returns a license badge based on which license is passed in
 function renderLicenseBadge(license, link) {
-  return `![lisence: ${license}](https://img.shields.io/github/license/${link.split("github.com")[1]})`
+  return `![lisence: ${license}](https://img.shields.io/github/license${link.split("github.com")[1]})`
 }
 
 // returns the license link
@@ -34,7 +34,7 @@ function generateMarkdown(data) {
   
   [License](#License)
   
-  [Installation]#Installation
+  [Installation](#Installation)
 
   ${data.Installation}
   
@@ -52,7 +52,8 @@ function generateMarkdown(data) {
   
   ## Questions
 
-  ${data.Questions}
+  If you have any questions I can be reached through my email [${data.Email}](${data.Email}) or through [my Github](https://github.com/${data.Username}/). 
+  ${data.questions}
   
   ## License
 

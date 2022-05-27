@@ -58,17 +58,27 @@ const questions = [
         message: 'What is the github link associated with your project?',
         name: 'link',
     },
+    {
+        type: 'input',
+        message: 'What shall we call the file? (blank is README.md)',
+        name: 'file',
+    },
+    {
+        type: 'input',
+        message: "Any additional information about getting in contact with you that isn't your email or github account",
+        name: 'questions',
+    }
 ];
 
 // TODO: Create a function to write README file
 async function writeToFile(fileName, data) {
-    fs.writeFile(fileName, data, err => console.log(err));
+    fs.writeFile(fileName, data, err => err? console.log(err) : {});
 }
 
 // TODO: Create a function to initialize app
 function init() {
     iq.prompt(questions).then(data=>{
-        writeToFile(`${data.title}-README.md`,generate(data))
+        writeToFile(data.file ? data.file : "README.md",generate(data))
     })
 }
 
